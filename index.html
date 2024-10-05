@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSS GEHU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            background-image: url('https://source.unsplash.com/1920x1080/?dark');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Custom Scroll Animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .scroll-animation.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between p-6 bg-gray-900 fixed w-full z-10">
+        <div class="text-3xl font-bold">NSS GEHU</div>
+        <ul class="flex space-x-8 text-lg">
+            <li><a href="#home" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('home')">Home</a></li>
+            <li><a href="#about" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('about')">About</a></li>
+            <li><a href="#news" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('news')">News</a></li>
+            <li><a href="#activities" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('activities')">Glimpses</a></li>
+            <li><a href="#camps" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('camps')">Camps</a></li>
+            <li><a href="#volunteers" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('volunteers')">Volunteers</a></li>
+            <li><a href="#events" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('events')">Events</a></li> 
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen pt-16">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="flex flex-col justify-center items-center h-full text-center">
+            <h1 class="text-6xl font-bold text-white z-10 animate__animated animate__fadeIn">THIS IS NSS GEHU</h1>
+            <p class="text-xl font-light mt-4 z-10 animate__animated animate__fadeInUp">NOT ME, BUT YOU!</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 px-4 lg:px-16 scroll-animation">
+        <div class="text-center mb-12 animate__animated animate__fadeInUp">
+            <h2 class="text-4xl font-bold">About NSS GEHU</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-gray-400">
+                The National Service Scheme (NSS) is a public service program under the Government of India aimed at developing students' personalities through social service and community activities.
+            </p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-12 px-4 lg:px-16 scroll-animation"> 
+        <div class="text-center mb-12 animate__animated animate__fadeInUp">
+            <h2 class="text-4xl font-bold text-white">NSS News</h2> 
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- News Item -->
+            <div class="animate__animated animate__fadeInUp">
+                <h2 class="text-2xl font-semibold text-white">NSS News</h2>
+                <div class ="grid gap-6 mt-6">
+                    <!-- News Item -->
+                    <a href="#" class="flex bg-gray-900 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://source.unsplash.com/200x200/?news" class="w-32 h-32 object-cover rounded" alt="News">
+                        <div class="ml-4 ">
+                            <h3 class="text-lg font-semibold">A Decisive Victory for Progressive Policies</h3>
+                            <p class="text-gray-400 text-sm mt-1">Politics - 23.4k views</p>
+                        </div>
+                    </a> <a href="#" class="flex bg-gray-800 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://source.unsplash.com/200x200/?tech" class="w-32 h-32 object-cover rounded" alt="News">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Tech Giants Unveil Cutting-Edge AI Innovations</h3>
+                            <p class="text-gray-400 text-sm mt-1">Technology - 12.8k views</p>
+                        </div>
+                    </a>
+                    <a href="#" class="flex bg-gray-800 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://source.unsplash.com/200x200/?health" class="w-32 h-32 object-cover rounded" alt="News">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">COVID-19 Variants</h3>
+                            <p class="text-gray-400 text-sm mt-1">Health - 18.4k views</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Event Info -->
+            <div class="bg-gray-900 p-8 rounded-lg animate__animated animate__fadeInUp">
+                <h3 class="text-2xl font-semibold mb-4 text-white">Next Event</h3>
+                <div class="text-gray-400 mb-4">
+                    <p><strong>Date:</strong> October 16, 2023</p>
+                    <p><strong>Location:</strong> Healthcare Seminar</p>
+                    <p><strong>Speaker:</strong> Dr. Emily Walker</p>
+                </div>
+                <a href="#" class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glimpses Section -->
+    <section id="activities" class="py-12 scroll-animation">
+        <div class="text-center mb-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold">Glimpses</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
+            <!-- Glimpse Card -->
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-1')">
+                <h4 class="text-lg font-semibold">Event 1</h4>
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-2')">
+                <h4 class="text-lg font-semibold">Event 2</h4>
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-3')">
+                <h4 class="text-lg font-semibold">Event 3</h4>
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event ">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-4')">
+                <h4 class="text-lg font-semibold">Event 4</h4>
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+            </div>
+        </div>
+    </section>
+
+    <!-- Camps Section -->
+    <section id="camps" class=" py-12 scroll-animation">
+        <div class="text-center mb-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold">Camps</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
+            <!-- Camp Card -->
+            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-1')">
+                <h4 class="text-lg font-semibold">Camp 1</h4>
+                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-2')">
+                <h4 class="text-lg font-semibold">Camp 2</h4>
+                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-3')">
+                <h4 class="text-lg font-semibold">Camp 3</h4>
+                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-4')">
+                <h4 class="text-lg font-semibold ">Camp 4</h4>
+                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteers Section -->
+    <section id="volunteers" class="py-12 scroll-animation">
+        <div class="text-center mb-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold text-white">Volunteers</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
+            <!-- Volunteer Card -->
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-1')">
+                <h4 class="text-lg font-semibold text-white">Volunteer 1</h4>
+                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-2')">
+                <h4 class="text-lg font-semibold text-white">Volunteer 2</h4>
+                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-3')">
+                <h4 class="text-lg font-semibold text-white">Volunteer 3</h4>
+ <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
+            </div>
+            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration -300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-4')">
+                <h4 class="text-lg font-semibold text-white">Volunteer 4</h4>
+                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-12 scroll-animation">
+        <div class="text-center mb-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold">Events</h2>
+        </div>
+        < div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
+            <!-- Event Card -->
+            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+                <h4 class="text-lg font-semibold">Event 1</h4>
+            </a>
+            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+                <h4 class="text-lg font-semibold">Event 2</h4>
+            </a>
+            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+                <h4 class="text-lg font-semibold">Event 3</h4>
+            </a>
+            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
+                <h4 class="text-lg font-semibold">Event 4</h4>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 scroll-animation">
+        <div class="flex justify-around text-center animate__animated animate__fadeInUp">
+            <div>
+                <h3 class="text-3xl font-bold">Total Volunteers</h3>
+                <p class="text-2xl mt-2">101</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold">Instagram Followers</h3>
+                <p class="text-2xl mt-2">500k</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold">YouTube Subscribers</h3>
+                <p class="text-2xl mt-2">200k</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heroic Section -->
+    <section class="py-12 scroll-animation">
+        <div class="text-center mb-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold">Heroic Section</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 px-4 lg:px-16">
+            <div class="text-center animate__animated animate__fadeInUp">
+                <p class="text-gray-400 italic">"The experience at NSS has been a game-changer for me."</p>
+                <p class="font-bold mt-2">Alan Jackson</p>
+            </div>
+            <div class="text-center animate__animated animate__fadeInUp">
+                <p class="text-gray-400 italic">"I have learned a lot about teamwork and leadership."</p>
+                <p class="font-bold mt-2">Jessica Miller</p>
+            </div>
+            <div class="text-center animate__animated animate__fadeInUp">
+ <p class="text-gray-400 italic">"NSS has given me opportunities to help my community."</p>
+                <p class="font-bold mt-2">Diego Lopez</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        < p class="text-gray-400">&copy; 2023 NSS GEHU. All rights reserved.</p>
+        <div class="flex justify-center mt-4 space-x-6">
+            <a href="#"><img src="https://source.unsplash.com/20x20/?facebook" alt="Facebook" class="h-6"></a>
+            <a href="#"><img src="https://source.unsplash.com/20x20/?instagram" alt="Instagram" class="h-6"></a>
+            <a href="#"><img src="https://source.unsplash.com/20x20/?twitter" alt="Twitter" class="h-6"></a>
+            <a href ="#"><img src="https://source.unsplash.com/20x20/?youtube" alt ="YouTube" class="h-6"></a>
+        </div>
+    </footer>
+
+    <!-- Volunteer Details -->
+    <div id="volunteer-1" class="hidden">
+        <h2>Volunteer 1</h2>
+        <p>This is the description of volunteer 1.</p>
+    </div>
+    <div id="volunteer-2" class="hidden">
+        <h2>Volunteer 2</h2>
+        <p>This is the description of volunteer 2.</p>
+    </div>
+    <div id="volunteer-3" class="hidden">
+        <h2>Volunteer 3</h2>
+        <p>This is the description of volunteer 3.</p>
+    </div>
+    <div id="volunteer-4" class="hidden">
+        <h2>Volunteer 4</h2>
+        <p>This is the description of volunteer 4.</p>
+    </div>
+
+    <!-- Camp Details -->
+    <div id="camp-1" class="hidden">
+        <h2>Camp 1</h2>
+        <p>This is the description of camp 1.</p>
+    </div>
+    <div id="camp-2" class="hidden">
+        <h2>Camp 2</h2>
+        <p>This is the description of camp 2.</p>
+    </div>
+    <div id="camp-3" class="hidden">
+        <h2>Camp 3</h2>
+        <p>This is the description of camp 3.</p>
+    </div>
+    <div id="camp-4" class="hidden">
+        <h2>Camp 4</h2>
+        <p>This is the description of camp 4.</p>
+    </div>
+
+    <!-- Glimpse Details -->
+    <div id="glimpse-1" class="hidden">
+        <h2>Event 1</h2>
+        <p>This is the description of event 1.</p>
+    </div>
+    <div id="glimpse-2" class="hidden">
+        <h2>Event 2</h2>
+        <p>This is the description of event 2.</p>
+    </div>
+    <div id="glimpse-3" class="hidden">
+        <h2>Event 3</h2>
+        <p>This is the description of event 3.</p>
+    </div>
+    <div id="glimpse-4" class="hidden">
+        <h2>Event 4</h2>
+        <p>This is the description of event 4.</p>
+    </div>
+
+    <script>
+        // Function to show volunteer details
+        function showVolunteerDetails(volunteerId) {
+            const volunteerDetails = document.getElementById(volunteerId);
+            volunteerDetails.classList.toggle('hidden');
+        }
+
+        // Function to show camp details
+        function showCampDetails(campId) {
+            const campDetails = document.getElementById(campId);
+            campDetails.classList.toggle('hidden');
+        }
+
+        // Function to show glimpse details
+        function showGlimpseDetails(glimpseId) {
+            const glimpseDetails = document.getElementById(glimpseId);
+            glimpseDetails.classList.toggle('hidden');
+        }
+
+        // Get all navbar buttons
+        const navbarButtons = document.querySelectorAll('nav ul li a');
+
+        // Add event listeners to each button
+        navbarButtons.forEach((button) => {
+            // Add event listener for click
+            button.addEventListener('click', (e) => {
+                // Prevent default link behavior
+                e.preventDefault();
+                // Get the section ID from the button's href attribute
+                const sectionId = button.getAttribute('href ').slice(1);
+                // Scroll to the corresponding section
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Add event listener for hover
+            button.addEventListener('mouseover', () => {
+                // Change the button's text color to white
+                button.style.color = 'white';
+            });
+
+            button.addEventListener('mouseout', () => {
+                // Change the button's text color back to its original color
+                button.style.color = '';
+            });
+        });
+
+        // Function to scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll Animation
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+
+        const elementInView = (el, offset = 0) => {
+            const elementTop = el.getBoundingClientRect().top + window.scrollY;
+            return (
+                elementTop + offset >= window.scrollY &&
+                elementTop + el.offsetHeight <= window.scrollY + window.innerHeight
+            );
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, -100)) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScrollAnimation);
+    </script>
+</body>
+</html>

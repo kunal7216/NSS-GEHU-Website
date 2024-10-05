@@ -1,399 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+    <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NSS GEHU</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000;
-            background-image: url('https://source.unsplash.com/1920x1080/?dark');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: #121212;
+            color: #ffffff;
         }
-
-        /* Custom Scroll Animations */
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        .header {
+            background-color: #3f51b5;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
-
-        .scroll-animation.active {
-            opacity: 1;
-            transform: translateY(0);
+        .header a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .hero-text h2 {
+            font-size: 2rem;
+        }
+        .section {
+            padding: 50px 0;
+            background-color: #121212;
+        }
+        .card {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .card img {
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .card:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-black text-white">
-
-    <!-- Navbar -->
-    <nav class="flex justify-between p-6 bg-gray-900 fixed w-full z-10">
-        <div class="text-3xl font-bold">NSS GEHU</div>
-        <ul class="flex space-x-8 text-lg">
-            <li><a href="#home" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('home')">Home</a></li>
-            <li><a href="#about" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('about')">About</a></li>
-            <li><a href="#news" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('news')">News</a></li>
-            <li><a href="#activities" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('activities')">Glimpses</a></li>
-            <li><a href="#camps" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('camps')">Camps</a></li>
-            <li><a href="#volunteers" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('volunteers')">Volunteers</a></li>
-            <li><a href="#events" class="hover:text-gray-400 smooth-scroll" onclick="scrollToSection('events')">Events</a></li> 
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative h-screen pt-16">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="flex flex-col justify-center items-center h-full text-center">
-            <h1 class="text-6xl font-bold text-white z-10 animate__animated animate__fadeIn">THIS IS NSS GEHU</h1>
-            <p class="text-xl font-light mt-4 z-10 animate__animated animate__fadeInUp">NOT ME, BUT YOU!</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-12 px-4 lg:px-16 scroll-animation">
-        <div class="text-center mb-12 animate__animated animate__fadeInUp">
-            <h2 class="text-4xl font-bold">About NSS GEHU</h2>
-            <p class="mt-4 max-w-3xl mx-auto text-gray-400">
-                The National Service Scheme (NSS) is a public service program under the Government of India aimed at developing students' personalities through social service and community activities.
-            </p>
-        </div>
-    </section>
-
-    <!-- News Section -->
-    <section id="news" class="py-12 px-4 lg:px-16 scroll-animation"> 
-        <div class="text-center mb-12 animate__animated animate__fadeInUp">
-            <h2 class="text-4xl font-bold text-white">NSS News</h2> 
-        </div>
-        <div class="grid lg:grid-cols-2 gap-12">
-            <!-- News Item -->
-            <div class="animate__animated animate__fadeInUp">
-                <h2 class="text-2xl font-semibold text-white">NSS News</h2>
-                <div class ="grid gap-6 mt-6">
-                    <!-- News Item -->
-                    <a href="#" class="flex bg-gray-900 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                        <img src="https://source.unsplash.com/200x200/?news" class="w-32 h-32 object-cover rounded" alt="News">
-                        <div class="ml-4 ">
-                            <h3 class="text-lg font-semibold">A Decisive Victory for Progressive Policies</h3>
-                            <p class="text-gray-400 text-sm mt-1">Politics - 23.4k views</p>
-                        </div>
-                    </a> <a href="#" class="flex bg-gray-800 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                        <img src="https://source.unsplash.com/200x200/?tech" class="w-32 h-32 object-cover rounded" alt="News">
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">Tech Giants Unveil Cutting-Edge AI Innovations</h3>
-                            <p class="text-gray-400 text-sm mt-1">Technology - 12.8k views</p>
-                        </div>
-                    </a>
-                    <a href="#" class="flex bg-gray-800 p-4 rounded hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                        <img src="https://source.unsplash.com/200x200/?health" class="w-32 h-32 object-cover rounded" alt="News">
-                        <div class="ml-4">
-                            <h3 class="text-lg font-semibold">COVID-19 Variants</h3>
-                            <p class="text-gray-400 text-sm mt-1">Health - 18.4k views</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Event Info -->
-            <div class="bg-gray-900 p-8 rounded-lg animate__animated animate__fadeInUp">
-                <h3 class="text-2xl font-semibold mb-4 text-white">Next Event</h3>
-                <div class="text-gray-400 mb-4">
-                    <p><strong>Date:</strong> October 16, 2023</p>
-                    <p><strong>Location:</strong> Healthcare Seminar</p>
-                    <p><strong>Speaker:</strong> Dr. Emily Walker</p>
-                </div>
-                <a href="#" class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transform hover:scale-105 transition duration-300 ease-in-out">Register Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Glimpses Section -->
-    <section id="activities" class="py-12 scroll-animation">
-        <div class="text-center mb-8 animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold">Glimpses</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
-            <!-- Glimpse Card -->
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-1')">
-                <h4 class="text-lg font-semibold">Event 1</h4>
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-2')">
-                <h4 class="text-lg font-semibold">Event 2</h4>
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-3')">
-                <h4 class="text-lg font-semibold">Event 3</h4>
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event ">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showGlimpseDetails('glimpse-4')">
-                <h4 class="text-lg font-semibold">Event 4</h4>
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-            </div>
-        </div>
-    </section>
-
-    <!-- Camps Section -->
-    <section id="camps" class=" py-12 scroll-animation">
-        <div class="text-center mb-8 animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold">Camps</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
-            <!-- Camp Card -->
-            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-1')">
-                <h4 class="text-lg font-semibold">Camp 1</h4>
-                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
-            </div>
-            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-2')">
-                <h4 class="text-lg font-semibold">Camp 2</h4>
-                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
-            </div>
-            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-3')">
-                <h4 class="text-lg font-semibold">Camp 3</h4>
-                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
-            </div>
-            <div class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showCampDetails('camp-4')">
-                <h4 class="text-lg font-semibold ">Camp 4</h4>
-                <img src="https://source.unsplash.com/400x200/?camp" class="w-full h-40 object-cover rounded mb-4" alt="Camp">
-            </div>
-        </div>
-    </section>
-
-    <!-- Volunteers Section -->
-    <section id="volunteers" class="py-12 scroll-animation">
-        <div class="text-center mb-8 animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold text-white">Volunteers</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
-            <!-- Volunteer Card -->
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-1')">
-                <h4 class="text-lg font-semibold text-white">Volunteer 1</h4>
-                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-2')">
-                <h4 class="text-lg font-semibold text-white">Volunteer 2</h4>
-                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-3')">
-                <h4 class="text-lg font-semibold text-white">Volunteer 3</h4>
- <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
-            </div>
-            <div class="bg-gray-900 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration -300 ease-in-out cursor-pointer" onclick="showVolunteerDetails('volunteer-4')">
-                <h4 class="text-lg font-semibold text-white">Volunteer 4</h4>
-                <img src="https://source.unsplash.com/400x200/?volunteer" class="w-full h-40 object-cover rounded mb-4" alt="Volunteer">
-            </div>
-        </div>
-    </section>
-
-    <!-- Events Section -->
-    <section id="events" class="py-12 scroll-animation">
-        <div class="text-center mb-8 animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold">Events</h2>
-        </div>
-        < div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 lg:px-16">
-            <!-- Event Card -->
-            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-                <h4 class="text-lg font-semibold">Event 1</h4>
-            </a>
-            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-                <h4 class="text-lg font-semibold">Event 2</h4>
-            </a>
-            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-                <h4 class="text-lg font-semibold">Event 3</h4>
-            </a>
-            <a href="#" class="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="https://source.unsplash.com/400x200/?event" class="w-full h-40 object-cover rounded mb-4" alt="Event">
-                <h4 class="text-lg font-semibold">Event 4</h4>
-            </a>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-12 scroll-animation">
-        <div class="flex justify-around text-center animate__animated animate__fadeInUp">
-            <div>
-                <h3 class="text-3xl font-bold">Total Volunteers</h3>
-                <p class="text-2xl mt-2">101</p>
-            </div>
-            <div>
-                <h3 class="text-3xl font-bold">Instagram Followers</h3>
-                <p class="text-2xl mt-2">500k</p>
-            </div>
-            <div>
-                <h3 class="text-3xl font-bold">YouTube Subscribers</h3>
-                <p class="text-2xl mt-2">200k</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Heroic Section -->
-    <section class="py-12 scroll-animation">
-        <div class="text-center mb-8 animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold">Heroic Section</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8 px-4 lg:px-16">
-            <div class="text-center animate__animated animate__fadeInUp">
-                <p class="text-gray-400 italic">"The experience at NSS has been a game-changer for me."</p>
-                <p class="font-bold mt-2">Alan Jackson</p>
-            </div>
-            <div class="text-center animate__animated animate__fadeInUp">
-                <p class="text-gray-400 italic">"I have learned a lot about teamwork and leadership."</p>
-                <p class="font-bold mt-2">Jessica Miller</p>
-            </div>
-            <div class="text-center animate__animated animate__fadeInUp">
- <p class="text-gray-400 italic">"NSS has given me opportunities to help my community."</p>
-                <p class="font-bold mt-2">Diego Lopez</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6 text-center">
-        < p class="text-gray-400">&copy; 2023 NSS GEHU. All rights reserved.</p>
-        <div class="flex justify-center mt-4 space-x-6">
-            <a href="#"><img src="https://source.unsplash.com/20x20/?facebook" alt="Facebook" class="h-6"></a>
-            <a href="#"><img src="https://source.unsplash.com/20x20/?instagram" alt="Instagram" class="h-6"></a>
-            <a href="#"><img src="https://source.unsplash.com/20x20/?twitter" alt="Twitter" class="h-6"></a>
-            <a href ="#"><img src="https://source.unsplash.com/20x20/?youtube" alt ="YouTube" class="h-6"></a>
-        </div>
-    </footer>
-
-    <!-- Volunteer Details -->
-    <div id="volunteer-1" class="hidden">
-        <h2>Volunteer 1</h2>
-        <p>This is the description of volunteer 1.</p>
-    </div>
-    <div id="volunteer-2" class="hidden">
-        <h2>Volunteer 2</h2>
-        <p>This is the description of volunteer 2.</p>
-    </div>
-    <div id="volunteer-3" class="hidden">
-        <h2>Volunteer 3</h2>
-        <p>This is the description of volunteer 3.</p>
-    </div>
-    <div id="volunteer-4" class="hidden">
-        <h2>Volunteer 4</h2>
-        <p>This is the description of volunteer 4.</p>
-    </div>
-
-    <!-- Camp Details -->
-    <div id="camp-1" class="hidden">
-        <h2>Camp 1</h2>
-        <p>This is the description of camp 1.</p>
-    </div>
-    <div id="camp-2" class="hidden">
-        <h2>Camp 2</h2>
-        <p>This is the description of camp 2.</p>
-    </div>
-    <div id="camp-3" class="hidden">
-        <h2>Camp 3</h2>
-        <p>This is the description of camp 3.</p>
-    </div>
-    <div id="camp-4" class="hidden">
-        <h2>Camp 4</h2>
-        <p>This is the description of camp 4.</p>
-    </div>
-
-    <!-- Glimpse Details -->
-    <div id="glimpse-1" class="hidden">
-        <h2>Event 1</h2>
-        <p>This is the description of event 1.</p>
-    </div>
-    <div id="glimpse-2" class="hidden">
-        <h2>Event 2</h2>
-        <p>This is the description of event 2.</p>
-    </div>
-    <div id="glimpse-3" class="hidden">
-        <h2>Event 3</h2>
-        <p>This is the description of event 3.</p>
-    </div>
-    <div id="glimpse-4" class="hidden">
-        <h2>Event 4</h2>
-        <p>This is the description of event 4.</p>
-    </div>
-
-    <script>
-        // Function to show volunteer details
-        function showVolunteerDetails(volunteerId) {
-            const volunteerDetails = document.getElementById(volunteerId);
-            volunteerDetails.classList.toggle('hidden');
-        }
-
-        // Function to show camp details
-        function showCampDetails(campId) {
-            const campDetails = document.getElementById(campId);
-            campDetails.classList.toggle('hidden');
-        }
-
-        // Function to show glimpse details
-        function showGlimpseDetails(glimpseId) {
-            const glimpseDetails = document.getElementById(glimpseId);
-            glimpseDetails.classList.toggle('hidden');
-        }
-
-        // Get all navbar buttons
-        const navbarButtons = document.querySelectorAll('nav ul li a');
-
-        // Add event listeners to each button
-        navbarButtons.forEach((button) => {
-            // Add event listener for click
-            button.addEventListener('click', (e) => {
-                // Prevent default link behavior
-                e.preventDefault();
-                // Get the section ID from the button's href attribute
-                const sectionId = button.getAttribute('href ').slice(1);
-                // Scroll to the corresponding section
-                const section = document.getElementById(sectionId);
-                section.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            // Add event listener for hover
-            button.addEventListener('mouseover', () => {
-                // Change the button's text color to white
-                button.style.color = 'white';
-            });
-
-            button.addEventListener('mouseout', () => {
-                // Change the button's text color back to its original color
-                button.style.color = '';
-            });
-        });
-
-        // Function to scroll to section
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Scroll Animation
-        const scrollElements = document.querySelectorAll('.scroll-animation');
-
-        const elementInView = (el, offset = 0) => {
-            const elementTop = el.getBoundingClientRect().top + window.scrollY;
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
             return (
-                elementTop + offset >= window.scrollY &&
-                elementTop + el.offsetHeight <= window.scrollY + window.innerHeight
+                <div>
+                    <header className="header flex justify-between items-center px-4">
+                        <div className="text-lg font-bold">NSS GEHU</div>
+                        <nav>
+                            <a href="#">Home</a>
+                            <a href="#">News</a>
+                            <a href="#">Activities</a>
+                            <a href="#">Events</a>
+                        </nav>
+                    </header>
+                    <section className="hero">
+                        <img src="https://placehold.co/1920x1080" alt="University building with students in front" />
+                        <div className="hero-text">
+                            <h1>THIS IS NSS GEHU</h1>
+                            <h2>NOT ME, BUT YOU!</h2>
+                        </div>
+                    </section>
+                    <section className="section">
+                        <div className="container mx-auto px-4">
+                            <div className="flex justify-between">
+                                <div className="w-2/3">
+                                    <h2 className="text-2xl font-bold mb-4">Introduction</h2>
+                                    <p className="mb-4">
+                                        The National Service Scheme (NSS) is an Indian government-sponsored public service program conducted by the Ministry of Youth Affairs and Sports of the Government of India. Popularly known as NSS, the scheme was launched in Gandhiji's Centenary year, 1969. Aimed at developing student's personality through community service, NSS is a voluntary association of young people in Colleges, Universities and at +2 level working for a campus-community linkage.
+                                    </p>
+                                    <div className="flex items-center mb-4">
+                                        <i className="fas fa-heart text-red-500 mr-2"></i> 24k
+                                        <i className="fas fa-comment text-gray-500 mx-2"></i> 5k
+                                        <i className="fas fa-share text-gray-500 ml-2"></i> 2k
+                                    </div>
+                                </div>
+                                <div className="w-1/3 ">
+                                    <h2 className="text-2xl font-bold mb-4">NSS News </h2>
+                                    <div className="flex">
+                                        <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                            <img src="https://placehold.co/150x150" alt="News 1" />
+                                            <h3 className="text-lg font-bold mt-2">A Reckless Victory for Progressive Policies</h3>
+                                            <p className="text-sm">Politics</p>
+                                            <div className="flex items-center mt-2">
+                                                <i className="fas fa-heart text-red-500 mr-2"></i> 22k
+                                                <i className="fas fa-comment text-gray-500 mx-2"></i> 
+                                            </div>   
+                                            <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                        </div>
+                                         
+                                        <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                            <img src="https://placehold.co/150x150" alt="News 2" />
+                                            <h3 className="text-lg font-bold mt-2">Tech Giants Unveil Cutting-Edge AI Innovations</h3>
+                                            <p className="text-sm">Technology</p>
+                                            <div className="flex items-center mt-2">
+                                                <i className="fas fa-heart text-red-500 mr-2"></i> 18k
+                                                <i className="fas fa-comment text-gray-500 mx-2"></i> 1k
+                                            </div>
+                                            <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                        </div>
+                                        <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                            <img src="https://placehold.co/150x150" alt="News 3" />
+                                            <h3 className="text-lg font-bold mt-2">COVID-19 Variants & Health</h3>
+                                            <p className="text-sm">Health</p>
+                                            <div className="flex items-center mt-2">
+                                                <i className="fas fa-heart text-red-500 mr-2"></i> 15k
+                                                <i className="fas fa-comment text-gray-500 mx-2"></i> 900
+                                            </div>
+                                            <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                        </div>
+                                    </div>
+                                    <p className="mt-4">Detail about news...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="section">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold mb-4">GLIMPSES</h2>
+                            <div className="flex justify-between">
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Glimpse 1" />
+                                    <h3 className="text-lg font-bold mt-2">Details</h3>
+                                    <p className="text-sm">Lorem ipsum</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Glimpse 2" />
+                                    <h3 className="text-lg font-bold mt-2">Details</h3>
+                                    <p className="text-sm">Lorem ipsum</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Glimpse 3" />
+                                    <h3 className="text-lg font-bold mt-2">Details</h3>
+                                    <p className="text-sm">Lorem ipsum</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Glimpse 4" />
+                                    <h3 className="text-lg font-bold mt-2">Details</h3>
+                                    <p className="text-sm">Lorem ipsum</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="section">
+                        <div className="container mx-auto px-4">
+                            <div className="flex justify-between">
+                                <div className="card w-1/3 text-center hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Total Volunteer</h3>
+                                    <p className="text-2xl">101</p>
+                                </div>
+                                <div className="card w-1/3 text-center hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Instagram followers</h3>
+                                    <p className="text-2xl">500k</p>
+                                </div>
+                                <div className="card w-1/3 text-center hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Youtube</h3>
+                                    <p className="text-2xl">200K</p>
+                                </div>
+                            </div>
+                        </ div>
+                    </section>
+                    <section className="section">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text -2xl font-bold mb-4">HEROIC SECTION</h2>
+                            <div className="flex justify-between">
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Alex Johnson</h3>
+                                    <p className="text-sm">Experience: 1 year</p>
+                                    <p className="text-sm">In the tech industry, I have worked on various projects that have helped me develop my skills in problem-solving.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Jessica White</h3>
+                                    <p className="text-sm">Experience: 2 years</p>
+                                    <p className="text-sm">I am passionate about AI and ML, and have worked on several projects that have helped me understand the intricacies of these fields.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Gregory Smith</h3>
+                                    <p className="text-sm">Experience: 3 years</p>
+                                    <p className="text-sm">I specialize in data analysis and visualization, and have worked on projects that have helped me develop my skills in these areas.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                            </div>
+                            <div className="flex justify-between mt-4">
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Sarah Thompson</h3>
+                                    <p className="text-sm">Experience: 2 years</p>
+                                    <p className="text-sm">I have worked on various web development projects, and have developed my skills in front-end and back-end development.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Ravi Patel</h3>
+                                    <p className="text-sm">Experience: 1 year</p>
+                                    <p className="text-sm ">I am a software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/3 hover:scale-110 transition duration-500">
+                                    <h3 className="text-lg font-bold">Emily Adams</h3>
+                                    <p className="text-sm">Experience: 3 years</p>
+                                    <p className="text-sm">I am a web developer with extensive experience in building high-quality sites. My experiences range from building responsive mobile sites that work well cross-browser to building scalable sites for the financial services industry.</p>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="section">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold mb-4">SQUADRON</h2>
+                            <div className="flex flex-wrap justify-between">
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron India" />
+                                    <h3 className="text-lg font-bold mt-2">India</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Lima" />
+                                    <h3 className="text-lg font-bold mt-2">Lima</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Quebec" />
+                                    <h3 className="text-lg font-bold mt-2">Quebec</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Charlie" />
+                                    <h3 className="text-lg font-bold mt-2">Charlie</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Foxtrot" />
+                                    <h3 className="text-lg font-bold mt-2">Foxtrot</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Panther" />
+                                    <h3 className="text-lg font-bold mt-2">Panther</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Roger" />
+                                    <h3 className="text-lg font-bold mt-2">Roger</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Echo" />
+                                    <h3 className="text-lg font-bold mt-2">Echo</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                                <div className="card w-1/4 hover:scale-110 transition duration-500">
+                                    <img src="https://placehold.co/300x200" alt="Squadron Delta" />
+                                    <h3 className="text-lg font-bold mt-2">Delta</h3>
+                                    <span className="text-gray-500 hover:text-gray-700 cursor-pointer">Read More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer className="bg-gray-900 p-8">
+                        <div className="grid grid-cols-5 gap-4">
+                            <div>
+                                <h4 className="font-bold">Home</h4>
+                                <ul className="mt-2 text-gray-400">
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Events</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-bold">News</h4>
+                                <ul className="mt-2 text-gray-400">
+                                    <li><a href="#">Trending Stories</a></li>
+                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">Health</a></li>
+                                    <li><a href="#">Politics</a></li>
+                                    <li><a href="#">Environment</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Team</h4>
+                                <ul className="mt-2 text-gray-400">
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">Join Us</a></li>
+                                    <li><a href="#">Volunteer</a></li>
+                                    <li><a href="#">Internships</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Events</h4>
+                                <ul className="mt-2 text-gray-400">
+                                    <li><a href="#">Upcoming Events</a></li>
+                                    <li><a href="#">Past Events</a></li>
+                                    <li><a href="#">Workshops</a></li>
+                                    <li><a href="#">Webinars</a></li>
+                                    <li><a href="#">Conferences</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Highlights</h4>
+                                <ul className="mt-2 text-gray-400">
+                                    <li><a href="#">Achievements</a></li>
+                                    <li><a href="#">Blogs</a></li>
+                                    <li><a href="#">Media</a></li>
+                                    <li><a href="#">Research Papers</a></li>
+                                    <li><a href="#">Newsletters</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+
+                                   
+                         
+                </div>
             );
-        };
+        }
 
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, -100)) {
-                    el.classList.add('active');
-                } else {
-                    el.classList.remove('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScrollAnimation);
+        ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
 </html>
